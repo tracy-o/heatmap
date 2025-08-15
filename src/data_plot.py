@@ -69,21 +69,21 @@ def create_plots(df, plot_type, top_n, special_users, filtered_users, output_loc
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate a Git commit hotspot visualization.")
-    parser.add_argument("--stacked", action="store_true", help="Generate a stacked bar chart showing contributors.")
-    parser.add_argument("--top", type=int, default=20, help="The number of top files to display. Defaults to 20.")
-    parser.add_argument("--filter-users", type=str, help="A comma-separated list of users to include in the plot.")
     parser.add_argument(
-        "--input-path",
+        "input_path",
         type=str,
         default="commit_data.csv",
         help="The path to the input CSV data file. Defaults to 'commit_data.csv'."
     )
     parser.add_argument(
-        "--output-path",
+        "output_path",
         type=str,
         default="commit_hotspots.png",
         help="The path to the output PNG image file. Defaults to 'commit_hotspots.png'."
     )
+    parser.add_argument("--stacked", action="store_true", help="Generate a stacked bar chart showing contributors.")
+    parser.add_argument("--top", type=int, default=20, help="The number of top files to display. Defaults to 20.")
+    parser.add_argument("--filter-users", type=str, help="A comma-separated list of users to include in the plot.")
 
     args = parser.parse_args()
     input_path = os.path.abspath(args.input_path)

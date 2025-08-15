@@ -50,13 +50,13 @@ def get_commit_data(repo_path, message_regex=None):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate a CSV of Git commit data.")
     parser.add_argument("repo_path", type=str, help="The path to the Git repository to analyze.")
-    parser.add_argument("--message", type=str, help="A regex to filter out commit messages. e.g., 'format|make format'")
-    parser.add_argument(
-        "--output-path",
+    parser.add_argument("output_path",
         type=str,
         default="commit_data.csv",
         help="The path to save the output CSV file. Defaults to 'commit_data.csv'."
     )
+    parser.add_argument("--message", type=str, help="A regex to filter out commit messages. e.g., 'format|make format'")
+
     args = parser.parse_args()
 
     repo_path = os.path.abspath(args.repo_path)
