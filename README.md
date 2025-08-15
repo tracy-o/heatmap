@@ -2,8 +2,7 @@
 
 Data representation for git commits.
 
-## Info
-### Requirements
+## Requirements
 ```sh
 - git
 - python3
@@ -11,25 +10,25 @@ Data representation for git commits.
 	- pandas
 ```
 
-### Usage
-#### Generate data
+## Usage
+### Generate data
 Data for a repo with a (required) input path:
 ```sh
-$ python3 src/data_gen.py ~/dev/repos/bbc/belfrage
+$ python3 src/data_gen.py ~/path/to/repo
 ```
 
 Data for a repo with an input path and specified output path.
 The default is `commit_data.csv` in the current working directory:
 ```sh
-$ python3 src/data_gen.py ~/dev/repos/bbc/belfrage output/commit_data.csv
+$ python3 src/data_gen.py ~/path/to/repo output/commit_data.csv
 ```
 
 Filter data for commits that do not include a commit message regex:
 ```sh
-$ python3 src/data_gen.py ~/dev/repos/bbc/belfrage output/commit_data.csv --message "format|mix format"
+$ python3 src/data_gen.py ~/path/to/repo output/commit_data.csv --message "format|mix format|lint"
 ```
 
-#### Generate visual
+### Generate visual
 Visual using default input/output path. The defaults are `./commit_data.csv` for input and `./commit_hotspots.png` for output:
 ```sh
 $ python3 src/data_plot.py
